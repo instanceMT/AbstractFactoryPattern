@@ -98,7 +98,7 @@
        
         public void CreateNewFile()
         {
-            FileName = "新檔案";
+            FileName = "新Excel檔案";
             Console.WriteLine($"{ProductName}；開啟新檔案；檔案名稱：{FileName}");
 
         }
@@ -122,7 +122,7 @@
         }
 
         /// <summary>
-        /// 編輯
+        /// 編輯檔案
         /// </summary>
        public void Edit()
         {
@@ -164,45 +164,60 @@
     public class WindowsWord : IWord
     {
         /// <summary>
-        /// 產品
+        /// 產品名稱
         /// </summary>
-        public string ProductName => throw new NotImplementedException();
+        public string ProductName { get { return "Windows Word"; } }
 
-        public string FileName => throw new NotImplementedException();
+        /// <summary>
+        /// 檔案名稱
+        /// </summary>
+        public string FileName { get; set; }
 
+        /// <summary>
+        /// 開新檔案
+        /// </summary>
         public void CreateNewFile()
         {
-            throw new NotImplementedException();
+            FileName = "新Word文件";
+            Console.WriteLine($"{ProductName}；開啟新檔案；檔案名稱：{FileName}");
         }
 
-        public void CreateNewFile(string fileName)
-        {
-            throw new NotImplementedException();
-        }
-
+       
+        /// <summary>
+        /// 編輯檔案
+        /// </summary>
         public void Edit()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{ProductName}-{FileName}；編輯");
         }
 
-        public void OpenExistFile()
-        {
-            throw new NotImplementedException();
-        }
-
+        
+        /// <summary>
+        /// 開啟既有檔案
+        /// </summary>
+        /// <param name="fileName"></param>
         public void OpenExistFile(string fileName)
         {
-            throw new NotImplementedException();
+            FileName = fileName;
+            Console.WriteLine($"{ProductName}；開啟既有檔案；檔案名稱：{FileName}");
         }
 
+        /// <summary>
+        /// 存檔
+        /// </summary>
         public void SaveFile()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{ProductName}；存檔；檔案名稱：{FileName}");
         }
 
+        /// <summary>
+        /// 另存新檔
+        /// </summary>
+        /// <param name="fileName"></param>
         public void SaveFileAs(string fileName)
         {
-            throw new NotImplementedException();
+            FileName = fileName;
+            Console.WriteLine($"{ProductName}；另存新檔；檔案名稱：{FileName}");
         }
     }
     #endregion 
